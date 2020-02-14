@@ -1,0 +1,23 @@
+phases:
+  install:
+    commands:
+      - echo Build starting on `date`
+      - echo Updating Node Modules
+      - npm install
+  pre_build:
+    commands:
+      - echo Logging into Amazon ECR
+      - aws --version
+      - $(aws ecr get-login --no-include-email --region us-east-2)
+      - REPOSITORY_URI=577716557776.dkr.ecr.us-east-2.amazonaws.com/awstest-backend
+  build:
+    commands:
+      - echo Building the docker image
+      - echo $REPOSITORY_URI
+#      - docker build -t $REPOSITORY_URI:latest
+  post_build:
+    commands:
+#      - echo Pushing docker image
+#artifacts:
+#  files:
+#    - '**/*'
