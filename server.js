@@ -8,7 +8,7 @@ const MYID = uuidv1();
 // App
 const app = express();
 app.get('/', (req, res) => {
-    res.send(`Connected to server: ${MYID}`);
+    res.send(`Connected to server: ${MYID} Hey This is a test`);
 });
 
 app.listen(PORT, HOST);
