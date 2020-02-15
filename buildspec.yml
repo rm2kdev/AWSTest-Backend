@@ -28,8 +28,8 @@ phases:
     commands:
       - echo Pushing docker image
       - docker push $REPOSITORY_URI:$GIT_BRANCH
+      - printf '[{"name":"awstest-backend", "imageUri":"%s"}]' $REPOSITORY_URI:$GIT_BRANCH > imagedefinitions.json
       - echo Build complete at `date`
-
-#artifacts:
-#  files:
-#    - '**/*'
+artifacts:
+  files:
+    - imagedefinitions.json
