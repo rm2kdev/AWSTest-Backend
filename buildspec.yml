@@ -7,8 +7,8 @@ phases:
       - echo Updating Node Modules
       - npm install
       - echo $CODEBUILD_WEBHOOK_BASE_REF
-      - echo CODEBUILD_WEBHOOK_HEAD_REF
-      - echo CODEBUILD_WEBHOOK_TRIGGER
+      - echo $CODEBUILD_WEBHOOK_HEAD_REF
+      - echo $CODEBUILD_WEBHOOK_TRIGGER
   pre_build:
     commands:
       - echo Logging into Amazon ECR
