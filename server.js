@@ -8,7 +8,7 @@ const MYID = uuidv1();
 // App
 const app = express();
 app.get('/', (req, res) => {
-    res.send(`Connected to server: ${MYID}`);
+    res.send(`Connected to server: ${MYID} this is the master branch`);
 });
 
 app.listen(PORT, HOST);
